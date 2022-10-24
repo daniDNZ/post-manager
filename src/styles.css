@@ -1,3 +1,37 @@
 @import 'normalize.css';
+@import 'sanitize.css';
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.header {
+  background-color: #F24130;
+  padding: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+.header__user-button {
+  height: 24px;
+  width: 24px;
+  background-image: url("/public/img/svg/user-mobile.svg");
+  cursor: pointer;
+  margin-left: auto;
+  display: inline-block;
+}
+
+.footer {
+  background-color: #590242;
+  padding: 40px;
+}
+.footer__text {
+  width: fit-content;
+  color: white;
+  margin: 0 auto;
+  display: block;
+}
 
 /*# sourceMappingURL=styles.css.map */
