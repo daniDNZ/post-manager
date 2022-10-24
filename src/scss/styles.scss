@@ -1,1 +1,3 @@
-@import 'normalize.css';
+@use './reset';
+@use './components/header';
+@use './components/footer';
