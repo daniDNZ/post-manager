@@ -1,0 +1,23 @@
+@use '../variables';
+@use '../mixins';
+
+.header {
+  background-color: variables.$app-orange;
+
+  padding: 20px;
+
+  @include mixins.flexbox(row, nowrap, space-between, 0);
+
+  &__logo {}
+
+  &__user-button {
+    height: 24px;
+    width: 24px;
+    background-image: url('/public/img/svg/user-mobile.svg');
+    cursor: pointer;
+
+    margin-left: auto;
+
+    display: inline-block;
+  }
+}
