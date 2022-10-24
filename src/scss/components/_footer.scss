@@ -1,0 +1,16 @@
+@use '../variables';
+
+.footer {
+  background-color: variables.$app-purple;
+
+  padding: 40px;
+
+  &__text {
+    width: fit-content;
+    color: white;
+
+    margin: 0 auto;
+
+    display: block;
+  }
+}
