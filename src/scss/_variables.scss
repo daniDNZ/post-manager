@@ -1,0 +1,8 @@
+// Colors
+$colors: (
+  'app-orange': #F24130,
+  'app-purple': #590242,
+);
+
+$app-orange: map-get($colors, 'app-orange');
+$app-purple: map-get($colors, 'app-purple');
