@@ -1,5 +1,17 @@
+@use 'variables';
 @import 'normalize.css';
 @import 'sanitize.css';
+
+html,
+body {
+  min-height: 100vh;
+  background-color: variables.$app-purple;
+  font-family: variables.$font-alata;
+}
+
+.main {
+  min-height: 100%;
+}
 
 button {
   border: none;
