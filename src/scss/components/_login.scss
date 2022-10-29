@@ -1,0 +1,40 @@
+.login-container {
+  width: 100%;
+  display: block;
+}
+
+.login-form {
+  width: 300px;
+
+  padding: 45px 0;
+  margin: 0 auto;
+
+  display: block;
+
+  &__input {
+    width: 300px;
+    height: 62px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+
+    padding: 20px;
+    margin: 0 auto 20px auto;
+
+    &--password::after {
+      content: 'boring';
+      color: white;
+      width: 30px;
+      height: 30px;
+      background-color: blue;
+
+    }
+
+    &--username::after {
+      content: 'ohmygo';
+      color: blue;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
