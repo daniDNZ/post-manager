@@ -2,7 +2,9 @@
 $colors: (
   'app-orange': #F24130,
   'app-purple': #590242,
+  'app-skin': #FED9C6,
 );
 
 $app-orange: map-get($colors, 'app-orange');
 $app-purple: map-get($colors, 'app-purple');
+$app-skin: map-get($colors, 'app-skin');
