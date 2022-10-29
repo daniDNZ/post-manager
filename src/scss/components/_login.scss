@@ -6,7 +6,7 @@
 .login-form {
   width: 300px;
 
-  padding: 45px 0;
+  padding: 40px 0;
   margin: 0 auto;
 
   display: block;
@@ -21,20 +21,30 @@
     padding: 20px;
     margin: 0 auto 20px auto;
 
-    &--password::after {
-      content: 'boring';
-      color: white;
-      width: 30px;
-      height: 30px;
-      background-color: blue;
+    display: block;
+    position: relative;
+
+  }
+
+  &__input-group {
+    position: relative;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    right: 12px;
+    top: 15px;
+
+    &--password {
+      background-image: url('/public/img/svg/key.svg');
 
     }
 
-    &--username::after {
-      content: 'ohmygo';
-      color: blue;
-      width: 32px;
-      height: 32px;
+    &--username {
+      background-image: url('/public/img/svg/person.svg');
     }
   }
 }
