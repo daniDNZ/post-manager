@@ -6,7 +6,7 @@
 
   padding: 20px;
 
-  @include mixins.flexbox(row, nowrap, space-between, 0);
+  @include mixins.flexbox(row, wrap, space-between, 0);
 
   &__logo {}
 
