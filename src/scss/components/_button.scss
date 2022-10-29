@@ -1,0 +1,15 @@
+@use '../variables';
+
+.button {
+  &--login {
+    width: 168px;
+    height: 62px;
+    background-color: variables.$app-skin;
+    border-radius: 10px;
+    font-size: 24px;
+
+    margin: 0 auto;
+
+    display: block;
+  }
+}
