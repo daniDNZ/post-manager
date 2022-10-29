@@ -1,12 +1,6 @@
-import { useState } from "react";
-
-export interface IUserState {
-  logged: boolean;
-  values: {
-    username: string;
-    email: string;
-  }
-}
+import { useReducer } from "react";
+import IUserState from "../interfaces/IUserState";
+import { authReducer, AuthActionKind } from "../reducers/authReducer";
 
 export default function useUser() {
   const loggedUserJSON = localStorage.getItem('postManagerUserData');
@@ -15,34 +9,22 @@ export default function useUser() {
     : {
       logged: false,
       values: {
-        username: '',
-        email: ''
+        username: ''
       }
     }
 
-  const [user, setUser] = useState(initialState);
+  const [user, dispatchUser] = useReducer(authReducer, initialState);
 
-  const loginUser = ({ username, email }: { username: string; email: string }) => {
-    const loggedUser: IUserState = {
-      logged: true,
-      values: {
-        username,
-        email
-      }
+  const loginUser = ({ username, password }: { username: string; password: string }) => {
+
+    // Hardcoded login
+    if (username === 'admin' && password === 'admin') {
+      dispatchUser({type: AuthActionKind.LOGIN, payload: {username}})
     }
-    localStorage.setItem('postManagerUserData', JSON.stringify(loggedUser));
-    setUser(loggedUser);
   }
 
   const logoutUser = () => {
-    localStorage.removeItem('postManagerUserData');
-    setUser({
-      logged: false,
-      values: {
-        username: '',
-        email: ''
-      }
-    })
+    dispatchUser({ type: AuthActionKind.LOGOUT, payload: { username: '' }});
   }
 
   return {
