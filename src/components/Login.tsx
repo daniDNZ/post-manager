@@ -27,20 +27,22 @@ export default function Login() {
   const userLoginJSX = user.logged ? (
     <button className="header__user-button"></button>
   ) : (
-    <div className="login__form-container">
+    <div className="login-container">
       <form className="login-form">
         <input
           type="text"
           name="username"
           id="username"
-          className="login-form__username"
+          placeholder="Username"
+          className="login-form__input login-form__input--username"
           onChange={handleInput}
         />
         <input
           type="password"
           name="password"
           id="password"
-          className="login-form__password"
+          placeholder="Password"
+          className="login-form__input login-form__input--password"
           onChange={handleInput}
         />
         <button
