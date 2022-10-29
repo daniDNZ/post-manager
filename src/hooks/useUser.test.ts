@@ -1,12 +1,12 @@
 import { renderHook, act } from '@testing-library/react';
-import useUser, { IUserState } from './useUser';
+import IUserState from '../interfaces/IUserState';
+import useUser from './useUser';
 
 describe('useUser hook', () => {
   const loginData: IUserState = {
     logged: false,
     values: {
-      username: '',
-      email: '',
+      username: ''
     }
   }
   localStorage.setItem('postManagerUserData', JSON.stringify(loginData));
@@ -19,13 +19,12 @@ describe('useUser hook', () => {
   test('should return logged (login)', () => {
     const { result } = renderHook(() => useUser());
     const username = 'admin';
-    const email = 'admin@admin.com';
+    const password = 'admin';
     act(() => {
-      result.current.loginUser({username, email});
+      result.current.loginUser({username, password});
     })
     expect(result.current.user.logged).toBe(true);
     expect(result.current.user.values.username).toEqual(username);
-    expect(result.current.user.values.email).toEqual(email);
   });
 
   test('should return not logged (logout)', () => {
