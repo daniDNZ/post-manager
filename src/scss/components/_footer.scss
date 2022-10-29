@@ -1,9 +1,11 @@
 @use '../variables';
 
 .footer {
+  width: 100%;
   background-color: variables.$app-purple;
 
   padding: 40px;
+
 
   &__text {
     width: fit-content;
