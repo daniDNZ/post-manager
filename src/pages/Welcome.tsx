@@ -1,10 +1,10 @@
 export default function Welcome() {
   return (
-    <div className="login">
-      <div className="login__content">
-        <span className="login__welcome">WELCOME!</span>
-        <div className="login__logo-container">
-          <span className="login__logo">Post Manager</span>
+    <div className="welcome">
+      <div className="welcome__content">
+        <span className="welcome__welcome">WELCOME!</span>
+        <div className="welcome__logo-container">
+          <span className="welcome__logo">Post Manager</span>
         </div>
       </div>
     </div>
