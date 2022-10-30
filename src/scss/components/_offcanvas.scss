@@ -1,0 +1,28 @@
+@use '../variables';
+@use '../mixins';
+
+.offcanvas {
+  height: 100%;
+  width: 100%;
+  background-color: variables.$app-skin;
+
+  @include mixins.flexbox(column, nowrap, center, 0);
+  position: absolute;
+  top: 0;
+
+  &__close {
+    width: 40px;
+    height: 40px;
+    background-image: url('/public/img/svg/close.svg');
+
+    position: absolute;
+    right: 15px;
+    top: 80px;
+  }
+
+  &__body {
+    width: 100%;
+
+    padding: 0 30px;
+  }
+}
