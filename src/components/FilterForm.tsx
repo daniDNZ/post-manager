@@ -24,7 +24,9 @@ export default function FilterForm() {
           <option value="id">Post ID</option>
         </select>
 
-        <button className="button button--filter-form">go</button>
+        <button type="submit" className="button button--filter-form">
+          go
+        </button>
       </form>
     </div>
   );

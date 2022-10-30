@@ -19,7 +19,9 @@ export default function EditPostForm() {
           className="form__input edit-post__input form__input--textarea"
           placeholder="Content"
         />
-        <button className="button button--offcanvas">edit</button>
+        <button type="submit" className="button button--offcanvas">
+          edit
+        </button>
       </form>
     </div>
   );
