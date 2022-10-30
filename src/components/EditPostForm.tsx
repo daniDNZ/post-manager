@@ -8,7 +8,7 @@ export default function EditPostForm() {
           type="text"
           name="title"
           id="title"
-          className="form__input"
+          className="form__input edit-post__input"
           placeholder="Title"
         />
         <textarea
@@ -16,7 +16,7 @@ export default function EditPostForm() {
           id="content"
           cols={30}
           rows={8}
-          className="form__input form__input--textarea"
+          className="form__input edit-post__input form__input--textarea"
           placeholder="Content"
         />
         <button className="button button--offcanvas">edit</button>
