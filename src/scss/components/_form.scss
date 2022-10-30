@@ -1,4 +1,5 @@
 @use '../variables';
+@use '../mixins';
 
 .form {
   &__input {
@@ -13,6 +14,11 @@
 
     display: block;
     position: relative;
+
+    @include mixins.desktop() {
+      height: 52px;
+      margin: 0;
+    }
 
     &--textarea {
       height: auto;
@@ -30,6 +36,7 @@
       background-position: 120px 26px;
 
       margin-bottom: 40px;
+      padding: 0 20px;
     }
 
     &::placeholder {
@@ -55,6 +62,10 @@
 
       margin-right: auto;
       margin-left: auto;
+
+      @include mixins.desktop() {
+        margin: 0;
+      }
     }
   }
 
@@ -65,6 +76,10 @@
     position: absolute;
     right: 12px;
     top: 15px;
+
+    @include mixins.desktop() {
+      top: 8px;
+    }
 
     &--password {
       background-image: url('/public/img/svg/key.svg');

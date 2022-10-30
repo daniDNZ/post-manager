@@ -1,8 +1,19 @@
 @use '../variables';
+@use '../mixins';
 
 .edit-post {
+  max-width: 720px;
+
+  margin: 0 auto;
+
   &__span {
     &:last-of-type {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__input {
+    @include mixins.desktop() {
       margin-bottom: 20px;
     }
   }

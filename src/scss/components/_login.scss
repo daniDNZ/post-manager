@@ -1,6 +1,13 @@
+@use '../mixins';
+
 .login-container {
   width: 100%;
   display: block;
+
+  @include mixins.desktop() {
+    width: auto;
+  }
+
 }
 
 .login-form {
@@ -10,5 +17,12 @@
   margin: 0 auto;
 
   display: block;
+
+  @include mixins.desktop() {
+    width: auto;
+    padding: 0;
+
+    @include mixins.flexbox(row, nowrap, right, 20px);
+  }
 
 }

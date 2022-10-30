@@ -1,8 +1,17 @@
 @use '../mixins';
 
-// .filter-posts {
-//   &__form {
+.filter-posts {
+  &__form {
+    @include mixins.desktop() {
+      margin-bottom: 30px;
 
-//     @include mixins.flexbox(column, nowrap, center, 0);
-//   }
-// }
+      @include mixins.flexbox(row, nowrap, flex-end, 20px);
+    }
+  }
+
+  &__input {
+    @include mixins.desktop() {
+      margin: 0;
+    }
+  }
+}
