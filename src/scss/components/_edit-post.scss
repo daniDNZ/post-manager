@@ -1,0 +1,9 @@
+@use '../variables';
+
+.edit-post {
+  &__span {
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+  }
+}
