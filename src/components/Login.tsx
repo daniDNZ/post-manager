@@ -4,7 +4,7 @@ import useUser from "../hooks/useUser";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { user, loginUser } = useUser();
+  const { user, loginUser, logoutUser } = useUser();
 
   const initialState = {
     username: "",
@@ -24,11 +24,21 @@ export default function Login() {
     navigate("/");
   };
 
+  const handleLogout = () => {
+    logoutUser();
+    navigate("/login");
+  };
+
   const userLoginJSX = user.logged ? (
-    <button className="header__user-button"></button>
+    <>
+      <button className="header__user-button"></button>
+      <button className="header__logout" onClick={handleLogout}>
+        Logout
+      </button>
+    </>
   ) : (
     <div className="login-container">
-      <form className="form login-form">
+      <form className="form login-form" onSubmit={handleLogin}>
         <div className="form__input-group">
           <input
             type="text"
@@ -51,11 +61,7 @@ export default function Login() {
           />
           <i className="form__icon form__icon--password"></i>
         </div>
-        <button
-          type="button"
-          className="button button--login"
-          onClick={handleLogin}
-        >
+        <button type="submit" className="button button--login">
           login
         </button>
       </form>
