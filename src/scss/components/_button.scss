@@ -1,15 +1,33 @@
 @use '../variables';
 
 .button {
+  background-color: variables.$app-orange;
+  border-radius: 10px;
+  font-size: 24px;
+  color: white;
+
+  padding: 15px 55px;
+  margin: 0 auto;
+
+  display: block;
+
   &--login {
-    width: 168px;
-    height: 62px;
     background-color: variables.$app-skin;
-    border-radius: 10px;
-    font-size: 24px;
+    color: black;
 
-    margin: 0 auto;
+  }
 
-    display: block;
+  &--filter {
+    width: 60px;
+    height: 60px;
+    border-radius: 36px;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.30));
+    background-image: url('/public/img/svg/filter.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
   }
 }
