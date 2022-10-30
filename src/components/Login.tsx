@@ -31,10 +31,11 @@ export default function Login() {
 
   const userLoginJSX = user.logged ? (
     <>
-      <button className="header__user-button"></button>
-      <button className="header__logout" onClick={handleLogout}>
-        Logout
-      </button>
+      <div className="header__user-button" tabIndex={1}>
+        <button className="header__logout" onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
     </>
   ) : (
     <div className="login-container">
