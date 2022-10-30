@@ -28,28 +28,28 @@ export default function Login() {
     <button className="header__user-button"></button>
   ) : (
     <div className="login-container">
-      <form className="login-form">
-        <div className="login-form__input-group">
+      <form className="form login-form">
+        <div className="form__input-group">
           <input
             type="text"
             name="username"
             id="username"
             placeholder="Username"
-            className="login-form__input login-form__input--username"
+            className="form__input login-form__input--username"
             onChange={handleInput}
           />
-          <i className="login-form__icon login-form__icon--username"></i>
+          <i className="form__icon form__icon--username"></i>
         </div>
-        <div className="login-form__input-group">
+        <div className="form__input-group">
           <input
             type="password"
             name="password"
             id="password"
             placeholder="Password"
-            className="login-form__input login-form__input--password"
+            className="form__input login-form__input--password"
             onChange={handleInput}
           />
-          <i className="login-form__icon login-form__icon--password"></i>
+          <i className="form__icon form__icon--password"></i>
         </div>
         <button
           type="button"
