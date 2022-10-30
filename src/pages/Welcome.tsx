@@ -1,4 +1,12 @@
+import { Navigate } from "react-router-dom";
+import useUser from "../hooks/useUser";
+
 export default function Welcome() {
+  const { user } = useUser();
+
+  if (user.logged) {
+    return <Navigate to="/" replace />;
+  }
   return (
     <div className="welcome">
       <span className="welcome__text">WELCOME!</span>
