@@ -1,0 +1,10 @@
+@use '../variables';
+@use '../mixins';
+
+.home {
+  background-color: variables.$app-bg-color;
+
+  padding: 40px 50px;
+
+  @include mixins.flexbox(row, wrap, center, 25px);
+}
