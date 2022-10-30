@@ -11,40 +11,4 @@
 
   display: block;
 
-  &__input {
-    width: 300px;
-    height: 62px;
-    border: none;
-    border-radius: 10px;
-    font-size: 20px;
-
-    padding: 20px;
-    margin: 0 auto 20px auto;
-
-    display: block;
-    position: relative;
-
-  }
-
-  &__input-group {
-    position: relative;
-  }
-
-  &__icon {
-    width: 32px;
-    height: 32px;
-    display: block;
-    position: absolute;
-    right: 12px;
-    top: 15px;
-
-    &--password {
-      background-image: url('/public/img/svg/key.svg');
-
-    }
-
-    &--username {
-      background-image: url('/public/img/svg/person.svg');
-    }
-  }
 }
