@@ -1,8 +1,13 @@
 @use './reset';
 @use './components/header';
 @use './components/footer';
+@use './components/main';
+@use './components/form';
 @use './components/login';
 @use './components/button';
 @use './components/welcome';
 @use './components/home';
 @use './components/card';
+@use './components/offcanvas';
+@use './components/edit-post';
+@use './components/filter-posts';
