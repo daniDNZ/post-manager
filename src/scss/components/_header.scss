@@ -2,13 +2,15 @@
 @use '../mixins';
 
 .header {
+  width: 100%;
   background-color: variables.$app-orange;
 
   padding: 20px;
 
   @include mixins.flexbox(row, wrap, space-between, 0);
-
-  &__logo {}
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 
   &__user-button {
     height: 24px;
