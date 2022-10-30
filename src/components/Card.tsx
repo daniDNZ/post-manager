@@ -1,3 +1,10 @@
+import { useAppDispatch } from "../app/hooks";
+import {
+  changeForm,
+  enableOffcanvas,
+  OffcanvasKind,
+} from "../features/offcanvas/offcanvasSlice";
+
 type Props = {
   data: {
     title: string;
@@ -7,11 +14,20 @@ type Props = {
 };
 
 export default function Card({ data: { title, userID, content } }: Props) {
+  const dispatch = useAppDispatch();
+
+  const handleEditButton = () => {
+    dispatch(changeForm(OffcanvasKind.EDIT_FORM));
+    dispatch(enableOffcanvas());
+  };
   return (
     <div className="card">
       <div className="card__header">
-        <button className="card__btn card__btn--edit"></button>
-        <button className="card__btn card__btn--delete"></button>
+        <button
+          className="card__btn card__btn--edit"
+          onClick={handleEditButton}
+        />
+        <button className="card__btn card__btn--delete" />
       </div>
       <div className="card__title-wrapper">
         <h3 className="card__title">{title}</h3>
