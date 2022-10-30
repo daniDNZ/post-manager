@@ -1,9 +1,10 @@
 @use '../variables';
+@use '../mixins';
 
 .button {
   background-color: variables.$app-orange;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 20px;
   color: white;
 
   padding: 15px 55px;
@@ -17,6 +18,12 @@
 
   }
 
+  &--filter-form {
+    @include mixins.desktop() {
+      display: none;
+    }
+  }
+
   &--filter {
     width: 60px;
     height: 60px;
@@ -26,8 +33,14 @@
     background-repeat: no-repeat;
     background-position: center;
 
+    padding: 0;
+
     position: fixed;
     right: 30px;
     bottom: 40px;
+
+    @include mixins.desktop() {
+      display: none;
+    }
   }
 }
