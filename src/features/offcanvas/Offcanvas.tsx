@@ -32,8 +32,8 @@ export default function Offcanvas() {
   useEffect(() => {
     const body = document.querySelector("body");
 
-    if (body) body.style.overflow = "hidden";
-  }, []);
+    if (body) body.style.overflow = offcanvasActive ? "hidden" : "auto";
+  }, [offcanvasActive]);
   return (
     <div className="offcanvas" style={offcanvasDisplay}>
       <button
