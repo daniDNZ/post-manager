@@ -7,7 +7,7 @@ export default function FilterForm() {
             type="text"
             name="search"
             id="search"
-            className="form__input"
+            className="form__input filter-posts__input"
             placeholder="Search..."
           />
           <i className="form__icon form__icon--search"></i>
@@ -16,7 +16,7 @@ export default function FilterForm() {
         <select
           name="selectFilter"
           id="selectFilter"
-          className="form__input form__input--select"
+          className="form__input form__input--select filter-posts__input"
         >
           <option value="title">Title</option>
           <option value="content">Content</option>
@@ -24,7 +24,7 @@ export default function FilterForm() {
           <option value="id">Post ID</option>
         </select>
 
-        <button className="button button--offcanvas">go</button>
+        <button className="button button--filter-form">go</button>
       </form>
     </div>
   );
