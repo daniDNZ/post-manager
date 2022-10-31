@@ -3,27 +3,6 @@ import { RootState } from "../../app/store";
 import apiFetch, { FetchMethods } from "../../functions/apiFetch";
 import parseLinkHeaders from "../../functions/parseLinkHeaders";
 
-export const fetchPosts = createAsyncThunk(
-  'posts/fetchPosts',
-    async (_, thunkAPI) => {
-      const state = thunkAPI.getState() as RootState;
-    const options = {
-      url: state.posts.url,
-      method: FetchMethods.GET,
-    };
-      const res = await apiFetch(options);
-      const pages = res.linkHeaders
-        ? parseLinkHeaders(res.linkHeaders)
-        : {
-          first: 0,
-          next: 0,
-          prev: 0,
-          last: 0,
-        }
-    return { data: res.data, pages };
-  },
-);
-
 export interface IPost {
   userId?: number,
   id: number,
@@ -46,6 +25,27 @@ export interface IPostsState {
   limit: number;
   pages: IPages;
 }
+
+export const fetchPosts = createAsyncThunk(
+  'posts/fetchPosts',
+    async (_, thunkAPI) => {
+      const state = thunkAPI.getState() as RootState;
+    const options = {
+      url: state.posts.url,
+      method: FetchMethods.GET,
+    };
+      const res = await apiFetch(options);
+      const pages = res.linkHeaders
+        ? parseLinkHeaders(res.linkHeaders)
+        : {
+          first: 0,
+          next: 0,
+          prev: 0,
+          last: 0,
+        }
+    return { data: res.data, pages };
+  },
+);
 
 const initialState: IPostsState = {
   values: [],
