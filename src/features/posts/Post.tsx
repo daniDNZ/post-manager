@@ -4,7 +4,7 @@ import {
   enableOffcanvas,
   OffcanvasKind,
 } from "../offcanvas/offcanvasSlice";
-import { IPost } from "./postsSlice";
+import { deletePost, IPost } from "./postsSlice";
 
 type Props = {
   data: IPost;
@@ -24,7 +24,10 @@ export default function Post({ data: { title, userId, id, body } }: Props) {
           className="card__btn card__btn--edit"
           onClick={handleEditButton}
         />
-        <button className="card__btn card__btn--delete" />
+        <button
+          className="card__btn card__btn--delete"
+          onClick={() => dispatch(deletePost({ id }))}
+        />
       </div>
       <div className="card__title-wrapper">
         <h3 className="card__title">{title}</h3>
