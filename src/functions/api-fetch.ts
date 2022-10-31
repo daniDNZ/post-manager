@@ -1,14 +1,9 @@
+import { IPost } from "../features/posts/postsSlice";
+
 export enum FetchMethods {
   POST = 'POST',
   GET = 'GET',
   DELETE = 'DELETE'
-}
-
-export interface IPost {
-  userId?: number,
-  id: number,
-  title?: string,
-  body?: string
 }
 
 type Params = {

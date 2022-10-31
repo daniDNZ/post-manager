@@ -1,4 +1,5 @@
-import apiFetch, { FetchMethods, IPost } from './api-fetch';
+import { IPost } from '../features/posts/postsSlice';
+import apiFetch, { FetchMethods } from './api-fetch';
 
 describe('apiFetch function', () => {
 
