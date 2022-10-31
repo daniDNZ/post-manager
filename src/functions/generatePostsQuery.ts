@@ -5,6 +5,5 @@ export default function generatePostsQuery(postsState: IPostsState) {
   if (postsState.q.length > 0) {
     query += `&q=${postsState.q}`;
   }
-  console.log(query)
   return query;
 }
