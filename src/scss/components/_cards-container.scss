@@ -1,5 +1,6 @@
 @use '../mixins';
 
 .cards-container {
+  margin-bottom: 30px;
   @include mixins.flexbox(row, wrap, center, 25px);
 }

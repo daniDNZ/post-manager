@@ -1,0 +1,38 @@
+@use '../mixins';
+
+$btnNextPrevSize: 5px;
+
+.pagination {
+  width: fit-content;
+
+  margin: 0 auto;
+
+  @include mixins.flexbox(row, nowrap, center, 20px);
+
+  &__button {
+    width: 0;
+    height: 0;
+    border-style: solid;
+
+    padding: 0;
+    margin: 0;
+
+    &--prev {
+      border-width: 5px 8.7px 5px 0;
+      border-color: transparent #000000 transparent transparent;
+
+      &:disabled {
+        border-color: transparent #afafaf transparent transparent;
+      }
+    }
+
+    &--next {
+      border-width: 5px 0 5px 8.7px;
+      border-color: transparent transparent transparent #000000;
+
+      &:disabled {
+        border-color: transparent transparent transparent #afafaf;
+      }
+    }
+  }
+}
