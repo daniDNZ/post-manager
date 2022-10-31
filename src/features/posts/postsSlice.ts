@@ -41,7 +41,6 @@ export const fetchPosts = createAsyncThunk(
   'posts/fetchPosts',
     async (_, thunkAPI) => {
       const state = thunkAPI.getState() as RootState;
-      console.log(state.posts.url)
     const options = {
       url: state.posts.url,
       method: FetchMethods.GET,
@@ -72,11 +71,26 @@ export const deletePost = createAsyncThunk(
   },
 );
 
+export const updatePost = createAsyncThunk(
+  'posts/updatePost',
+  async (post: IPost) => {
+    console.log(post)
+    const options = {
+      url: `${process.env.REACT_APP_API_DOMAIN}posts/${post.id}`,
+      method: FetchMethods.PUT,
+      body: JSON.stringify(post)
+    };
+      const res = await fakeFetch(options);
+
+    return {res, post};
+  },
+);
+
 const initialState: IPostsState = {
   values: [],
   status: 'idle',
   url: `${process.env.REACT_APP_API_DOMAIN}posts?_page=1&_limit=10`,
-  currentPostId: 0,
+  currentPostId: 1,
   currentPage: 1,
   limit: 10,
   q: '',
@@ -115,6 +129,9 @@ export const postsSlice = createSlice({
       const query = generatePostsQuery(state);
       state.url = `${process.env.REACT_APP_API_DOMAIN}posts${query}`;
     },
+    setCurrentPost: (state, action: PayloadAction<number>) => {
+      state.currentPostId = action.payload;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -138,12 +155,23 @@ export const postsSlice = createSlice({
       })
       .addCase(deletePost.rejected, (state) => {
         state.status = 'failed';
+      })
+      .addCase(updatePost.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(updatePost.fulfilled, (state, action) => {
+        state.status = 'idle';
+        const index = state.values.findIndex((element) => element.id === action.payload.post.id);
+        state.values[index] = action.payload.post;
+      })
+      .addCase(updatePost.rejected, (state) => {
+        state.status = 'failed';
       });
   },
   
 });
 
-export const { nextPage, prevPage, otherPage, searchPosts } = postsSlice.actions;
+export const { nextPage, prevPage, otherPage, searchPosts, setCurrentPost } = postsSlice.actions;
 
 export const selectPosts = (state: RootState) => state.posts.values;
 export const selectPostsStatus = (state: RootState) => state.posts.status;
@@ -151,5 +179,6 @@ export const selectPostsCurrentPage = (state: RootState) => state.posts.currentP
 export const selectPostsLastPage = (state: RootState) => state.posts.pages.last;
 export const selectPostsQ = (state: RootState) => state.posts.q;
 export const selectPostsOrder = (state: RootState) => state.posts.order;
+export const selectCurrentPost = (state: RootState) => state.posts.values.filter((post) => post.id === state.posts.currentPostId)[0];
 
 export default postsSlice.reducer;
