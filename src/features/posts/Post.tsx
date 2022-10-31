@@ -4,7 +4,7 @@ import {
   enableOffcanvas,
   OffcanvasKind,
 } from "../offcanvas/offcanvasSlice";
-import { deletePost, IPost } from "./postsSlice";
+import { deletePost, IPost, setCurrentPost } from "./postsSlice";
 
 type Props = {
   data: IPost;
@@ -14,6 +14,7 @@ export default function Post({ data: { title, userId, id, body } }: Props) {
   const dispatch = useAppDispatch();
 
   const handleEditButton = () => {
+    dispatch(setCurrentPost(id));
     dispatch(changeForm(OffcanvasKind.EDIT_FORM));
     dispatch(enableOffcanvas());
   };
