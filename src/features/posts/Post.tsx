@@ -1,19 +1,16 @@
-import { useAppDispatch } from "../app/hooks";
+import { useAppDispatch } from "../../app/hooks";
 import {
   changeForm,
   enableOffcanvas,
   OffcanvasKind,
-} from "../features/offcanvas/offcanvasSlice";
+} from "../offcanvas/offcanvasSlice";
+import { IPost } from "./postsSlice";
 
 type Props = {
-  data: {
-    title: string;
-    userID: number;
-    content: string;
-  };
+  data: IPost;
 };
 
-export default function Card({ data: { title, userID, content } }: Props) {
+export default function Post({ data: { title, userId, id, body } }: Props) {
   const dispatch = useAppDispatch();
 
   const handleEditButton = () => {
@@ -34,8 +31,8 @@ export default function Card({ data: { title, userID, content } }: Props) {
       </div>
       <div className="card__body">
         <hr className="card__separator" />
-        <span className="card__user">User: {userID}</span>
-        <p className="card__content">{content}</p>
+        <span className="card__user">User: {userId}</span>
+        <p className="card__content">{body}</p>
       </div>
     </div>
   );
