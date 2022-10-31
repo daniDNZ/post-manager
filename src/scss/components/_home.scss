@@ -13,9 +13,4 @@
       display: block;
     }
   }
-
-  &__cards-container {
-    @include mixins.flexbox(row, wrap, center, 25px);
-  }
-
 }
