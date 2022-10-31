@@ -25,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "sass --watch src/scss:src"
+    "sass": "sass --watch src/scss:src",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +49,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
+    "cypress": "^10.11.0",
     "eslint": "^8.26.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0"
