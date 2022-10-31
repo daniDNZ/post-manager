@@ -46,7 +46,7 @@ export default function Login() {
             type="text"
             name="username"
             id="username"
-            placeholder="Username"
+            placeholder="admin"
             className="form__input login-form__input--username"
             onChange={handleInput}
           />
@@ -57,7 +57,7 @@ export default function Login() {
             type="password"
             name="password"
             id="password"
-            placeholder="Password"
+            placeholder="admin"
             className="form__input login-form__input--password"
             onChange={handleInput}
           />
