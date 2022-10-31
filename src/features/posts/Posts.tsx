@@ -2,16 +2,25 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import Pagination from "./Pagination";
 import Card from "./Post";
-import { fetchPosts, selectPosts, selectPostsCurrentPage } from "./postsSlice";
+import {
+  fetchPosts,
+  selectPosts,
+  selectPostsCurrentPage,
+  selectPostsQ,
+  selectPostsOrder,
+} from "./postsSlice";
 
 export default function Posts() {
   const posts = useAppSelector(selectPosts);
   const currentPage = useAppSelector(selectPostsCurrentPage);
+  const q = useAppSelector(selectPostsQ);
+  const order = useAppSelector(selectPostsOrder);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    console.log(order);
     dispatch(fetchPosts());
-  }, [dispatch, currentPage]);
+  }, [dispatch, currentPage, q, order]);
 
   return (
     <>
