@@ -18,7 +18,6 @@ export default function Posts() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    console.log(order);
     dispatch(fetchPosts());
   }, [dispatch, currentPage, q, order]);
 
