@@ -35,10 +35,11 @@ export default function Offcanvas() {
     if (body) body.style.overflow = offcanvasActive ? "hidden" : "auto";
   }, [offcanvasActive]);
   return (
-    <div className="offcanvas" style={offcanvasDisplay}>
+    <div className="offcanvas" style={offcanvasDisplay} data-cy="offcanvas">
       <button
         className="offcanvas__close"
         onClick={() => dispatch(disableOffcanvas())}
+        data-cy="closeOffcanvasButton"
       ></button>
       <div className="offcanvas__body">{offcanvasContent}</div>
     </div>

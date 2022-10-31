@@ -24,6 +24,7 @@ export default function Post({ data: { title, userId, id, body } }: Props) {
         <button
           className="card__btn card__btn--edit"
           onClick={handleEditButton}
+          data-cy="editButton"
         />
         <button
           className="card__btn card__btn--delete"
