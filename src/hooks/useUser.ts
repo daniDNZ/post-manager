@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import IUserState from "../interfaces/IUserState";
 import { authReducer, AuthActionKind } from "../reducers/authReducer";
+import { toast } from 'react-toastify';
 
 export default function useUser() {
   const loggedUserJSON = localStorage.getItem('postManagerUserData');
@@ -20,6 +21,10 @@ export default function useUser() {
     // Hardcoded login
     if (username === 'admin' && password === 'admin') {
       dispatchUser({type: AuthActionKind.LOGIN, payload: {username}})
+    } else {
+      toast.error('Login failed',{
+        position: toast.POSITION.TOP_CENTER
+      });
     }
   }
 

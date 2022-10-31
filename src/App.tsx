@@ -7,21 +7,23 @@ import Welcome from "./pages/Welcome";
 
 function App() {
   return (
-    <Layout>
-      <main className="main">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <RequireAuth>
-                <Home />
-              </RequireAuth>
-            }
-          />
-          <Route path="login" element={<Welcome />} />
-        </Routes>
-      </main>
-    </Layout>
+    <>
+      <Layout>
+        <main className="main">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <RequireAuth>
+                  <Home />
+                </RequireAuth>
+              }
+            />
+            <Route path="login" element={<Welcome />} />
+          </Routes>
+        </main>
+      </Layout>
+    </>
   );
 }
 

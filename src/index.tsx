@@ -6,6 +6,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./styles.css";
 import { BrowserRouter } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -17,6 +19,7 @@ root.render(
         <App />
       </BrowserRouter>
     </Provider>
+    <ToastContainer />
   </React.StrictMode>
 );
 
