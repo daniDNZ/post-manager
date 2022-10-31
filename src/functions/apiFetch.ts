@@ -3,7 +3,8 @@ import { IPost } from "../features/posts/postsSlice";
 export enum FetchMethods {
   POST = 'POST',
   GET = 'GET',
-  DELETE = 'DELETE'
+  DELETE = 'DELETE',
+  PUT = 'PUT'
 }
 
 type Params = {
