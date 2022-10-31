@@ -1,0 +1,16 @@
+@use '../variables';
+@use '../mixins';
+
+.home {
+  background-color: variables.$app-bg-color;
+
+  padding: 40px 50px;
+
+  &__filter-form {
+    display: none;
+
+    @include mixins.desktop() {
+      display: block;
+    }
+  }
+}

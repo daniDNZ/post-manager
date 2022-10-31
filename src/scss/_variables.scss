@@ -1,0 +1,24 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+// Font Variables
+$font-amatic: 'Amatic SC', cursive;
+$font-alata: 'Alata', sans-serif;
+
+// Colors
+$colors: (
+  'app-orange': #F24130,
+  'app-purple': #590242,
+  'app-skin': #FED9C6,
+  'app-bg': #F2F0EB,
+  'app-gray': #A0A0A0,
+  'app-dark-gray': #898888,
+);
+
+$app-orange: map-get($colors, 'app-orange');
+$app-purple: map-get($colors, 'app-purple');
+$app-skin: map-get($colors, 'app-skin');
+$app-bg-color: map-get($colors, 'app-bg');
+$app-gray: map-get($colors, 'app-gray');
+$app-dark-gray: map-get($colors, 'app-dark-gray');
