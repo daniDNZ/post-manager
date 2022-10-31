@@ -2,6 +2,11 @@
 
 Puedes visitar la demo aquí -> [PostManagerDEMO](https://danidnz.github.io/post-manager/)
 
+Credenciales:
+
+- Username: `admin`
+- Password: `admin`
+
 ## Descripción
 
 App que permite administrar y visualizar posts de la API [JSONPlaceholder](https://www.jsonplaceholder.typicode.com).
