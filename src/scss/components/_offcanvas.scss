@@ -6,8 +6,9 @@
   width: 100%;
   background-color: variables.$app-skin;
 
+
   @include mixins.flexbox(column, nowrap, center, 0);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 
