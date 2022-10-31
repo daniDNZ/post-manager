@@ -4,9 +4,10 @@ import apiFetch, { FetchMethods } from "../../functions/api-fetch";
 
 export const fetchPosts = createAsyncThunk(
   'posts/fetchPosts',
-  async () => {
+    async (_, thunkAPI) => {
+      const state = thunkAPI.getState() as RootState;
     const options = {
-      url: 'posts',
+      url: `posts?_page=${state.posts.page}&_limit=${state.posts.limit}`,
       method: FetchMethods.GET,
     };
     const posts: Array<IPost> = await apiFetch(options);
@@ -26,12 +27,14 @@ export interface IPostsState {
   values: IPost[];
   status: 'idle' | 'loading' | 'failed';
   page: number;
+  limit: number;
 }
 
 const initialState: IPostsState = {
   values: [],
   status: 'idle',
-  page: 1
+  page: 1,
+  limit: 10
 };
 
 export const postsSlice = createSlice({
