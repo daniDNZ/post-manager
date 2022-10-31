@@ -1,6 +1,7 @@
 {
+  "homepage":"https://danidnz.github.io/post-manager",
   "name": "post-manager",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
@@ -28,7 +29,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "sass": "sass --watch src/scss:src",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +57,7 @@
     "cypress": "^10.11.0",
     "eslint": "^8.26.0",
     "eslint-plugin-react": "^7.31.10",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^4.0.0"
   }
 }
