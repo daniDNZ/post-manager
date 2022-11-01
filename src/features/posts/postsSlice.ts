@@ -52,7 +52,7 @@ export const fetchPosts = createAsyncThunk(
           first: 0,
           next: 0,
           prev: 0,
-          last: 0,
+          last: 1,
         }
     return { data: res.data, pages };
   },
