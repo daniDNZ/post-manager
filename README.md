@@ -45,7 +45,7 @@ Construye una versión de producción en el directorio `build`.
 
 ## Diseño
 
-🎨 Puedes visitar el diseño en [Figma](https://www.figma.com/file/OnbmM7ZXSSTwklslzhem9w/Cleverpy---PostManager?node-id=0%3A1).
+🎨 Puedes visitar el diseño original en [Figma](https://www.figma.com/file/OnbmM7ZXSSTwklslzhem9w/Cleverpy---PostManager?node-id=0%3A1).
 
 ## Lenguajes y herramientas
 
