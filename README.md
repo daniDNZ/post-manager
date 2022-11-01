@@ -1,6 +1,6 @@
 # Post Manager
 
-Puedes visitar la demo aquí -> [PostManagerDEMO](https://danidnz.github.io/post-manager/)
+Puedes visitar la demo aquí (responsive) -> [PostManagerDEMO](https://danidnz.github.io/post-manager/)
 
 Credenciales:
 
@@ -44,6 +44,8 @@ Abre Cypress para correr test E2E.
 Construye una versión de producción en el directorio `build`.
 
 ## Diseño
+
+Se ha proyectado con dos diseños: móvil y desktop. La app es responsive y se ha maquetado bajo la premisa de "mobile first".
 
 🎨 Puedes visitar el diseño original en [Figma](https://www.figma.com/file/OnbmM7ZXSSTwklslzhem9w/Cleverpy---PostManager?node-id=0%3A1).
 
