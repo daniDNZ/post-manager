@@ -31,6 +31,14 @@ Inicias la app en modo desarrollo y abre [http://localhost:3000](http://localhos
 
 Ejecuta los test y se queda observando cambios.
 
+#### `npm run sass`
+
+Compila los archivos scss y se queda observando cambios.
+
+#### `npm run cypress:open`
+
+Abre Cypress para correr test E2E.
+
 #### `npm run build`
 
 Construye una versión de producción en el directorio `build`.
